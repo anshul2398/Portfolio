@@ -16,9 +16,10 @@ useGLTF.preload("/assets/3d/card.glb");
 useTexture.preload("/tag_texture.png");
 
 export default function About() {
-  const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const [size, setSize] = useState({ width:1600, height:800 });
 
   useEffect(() => {
+
     const handleResize = () => setSize({ width: window.innerWidth, height: window.innerHeight });
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

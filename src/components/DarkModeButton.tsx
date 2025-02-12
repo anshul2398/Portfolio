@@ -1,7 +1,6 @@
 'use client'
 import { useTheme } from 'next-themes';
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 
