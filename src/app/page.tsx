@@ -1,6 +1,7 @@
 import DarkModeButton from "@/components/DarkModeButton";
 import Header from "@/components/header";
 import HomeHeroImage from "@/components/HomeHeroImage";
+import Menu from "@/components/Menu";
 import PowerCard from "@/components/PowerCard";
 import { useTheme } from "next-themes";
 import { Anybody } from "next/font/google";
@@ -15,10 +16,11 @@ export default function Home() {
 
 
   return (
-    <main className={`${anybody.className} pb-40`}>
+    <main className={`${anybody.className} pb-40 `}>
       <Header />
       <HomeHeroImage />
       <PowerCard />
+      <Menu />
     </main>
 
   );
