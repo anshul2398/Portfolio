@@ -1,10 +1,11 @@
 'use client'
-import Router from 'next/router'
+import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 function Menu() {
 
     const [open, setOpen] = useState(false)
+    const router =useRouter()
 
     useEffect(() => {
 
@@ -35,7 +36,7 @@ function Menu() {
 
                 {/* These are the menu options */}
                 {/* About Navigation div */}
-                <div className={`${open ? ' -translate-y-[150%]  ' : ' invisible   scale-50'} z-[5]    transition-all duration-500 ease-out absolute  w-[5.25rem] left-1/2 -translate-x-[50%] rounded-[1.5rem] h-[5.25rem]  cursor-pointer `} onClick={() => Router.push('/aboutme')}>
+                <div className={`${open ? ' -translate-y-[150%]  ' : ' invisible   scale-50'} z-[5]    transition-all duration-500 ease-out absolute  w-[5.25rem] left-1/2 -translate-x-[50%] rounded-[1.5rem] h-[5.25rem]  cursor-pointer `} onClick={() => router.push('/aboutme')}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none">
                         <rect x="0.5" y="0.5" width="83" height="83" rx="19.5" fill="url(#paint0_linear_12865_21)" stroke="url(#paint1_linear_12865_21)" />
                         <g filter="url(#filter0_i_12865_21)">
@@ -77,7 +78,7 @@ function Menu() {
                 </div>
 
                 {/* Home Navigation div */}
-                <div className={`${open ? ' -translate-x-[150%] -translate-y-[50%] ' : ' invisible  scale-50'} z-[5] transition-all duration-500 ease-out absolute  w-[5.25rem] left-0 rounded-[1.5rem] h-[5.25rem]   cursor-pointer `} onClick={() => Router.push('/')}>
+                <div className={`${open ? ' -translate-x-[150%] -translate-y-[50%] ' : ' invisible  scale-50'} z-[5] transition-all duration-500 ease-out absolute  w-[5.25rem] left-0 rounded-[1.5rem] h-[5.25rem]   cursor-pointer `} onClick={() => router.push('/')}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none" >
                         <rect x="0.5" y="0.5" width="83" height="83" rx="19.5" fill="url(#paint0_linear_12865_16)" stroke="url(#paint1_linear_12865_16)" />
                         <g filter="url(#filter0_i_12865_16)">
@@ -128,7 +129,7 @@ function Menu() {
 
                 {/* Contact Navigation div */}
 
-                <div className={`${open ? ' translate-x-[150%] -translate-y-[50%] ' : ' invisible  scale-50'} z-[5] transition-all duration-500 ease-out absolute w-[5.25rem] right-0  rounded-[1.5rem] h-[5.25rem]  cursor-pointer `} onClick={() => '/conact'}>
+                <div className={`${open ? ' translate-x-[150%] -translate-y-[50%] ' : ' invisible  scale-50'} z-[5] transition-all duration-500 ease-out absolute w-[5.25rem] right-0  rounded-[1.5rem] h-[5.25rem]  cursor-pointer `} onClick={() => router.push('/contact')}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none">
                         <rect x="0.5" y="0.5" width="83" height="83" rx="19.5" fill="url(#paint0_linear_12865_30)" stroke="url(#paint1_linear_12865_30)" />
                         <path d="M25.5175 31.5004V31.5C25.5175 29.8479 26.8544 28.5 28.5 28.5H56.5C58.1489 28.5 59.5 29.8511 59.5 31.5V52.5C59.5 54.1489 58.1489 55.5 56.5 55.5H28.5C26.8512 55.5 25.5001 54.149 25.5 52.5002C25.5 52.5001 25.5 52.5001 25.5 52.5L25.5175 31.5004ZM56.765 35.424L57 35.2771V35V31.5V30.5979L56.235 31.076L42.5 39.6604L28.765 31.076L28 30.5979V31.5V35V35.2771L28.235 35.424L42.235 44.174L42.5 44.3396L42.765 44.174L56.765 35.424Z" fill="#5C5C5C" stroke="url(#paint2_linear_12865_30)" />

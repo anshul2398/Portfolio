@@ -14,7 +14,7 @@ const IBM_plex_mono = IBM_Plex_Mono({
 });
 function PowerCard() {
     return (
-        <div className=' relative  h-full pt-[8.25rem] mx-[10.25rem] '>
+        <div className=' relative  h-full mt-[4.25rem] pt-[4rem] mx-[8.25rem] '>
             <Image src='/powerbackground.png' alt='' layout='fill' className='-z-[1]' />
             <div className='flex items-center justify-center gap-x-8 '>
                 <Image src='/powerlines.png' alt='' width={120} height={24} className='shrink-0' />
@@ -22,9 +22,9 @@ function PowerCard() {
                 <Image src='/powerlines.png' alt='' width={120} height={24} className='shrink-0 rotate-y-180' />
 
             </div>
-            <div className='mx-[3rem]'>
+            <div className='mx-[2rem]'>
 
-
+                {/*Power Card Main Power*/}
                 <div className='flex items-center justify-between mt-28 '>
 
                     {/*Power Card ReactJs*/}
@@ -80,31 +80,16 @@ function PowerCard() {
 
                 </div>
 
+
+                {/*border seperater */}
                 <div className=' h-1 mt-[5.25rem] w-full' style={{ background: 'linear-gradient(to right, #F6F6F6, #313131, #F6F6F6)' }} />
 
 
                 {/* Skills  */}
 
-                <div className={`${kumar_one.className} grid grid-cols-3  gap-y-10  mt-[6rem]  ml-12`}>
+                <div className={`${kumar_one.className} grid grid-cols-3  gap-y-10   mt-[6rem]   `}>
 
-                    <div className='flex items-center'>
-                        <div className='relative z-[2] '>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 120" fill="none" className='w-[6.5rem] h-[9.375rem] shrink-0 '>
-                                <path d="M2 31.1551L52 2.30897L102 31.1551V88.8449L52 117.691L2 88.8449V31.1551Z" fill="#302E2E" stroke="#F7E08C" strokeWidth="4" />
-                            </svg>
-                            <div className='absolute h-[40%] w-[100%] inset-0 top-[28%]'>
-                                <Image alt='react' src='/reactnative.png' className=' object-scale-down top-0 mix-blend-lighten' layout='fill' />
-                            </div>
-                        </div>
 
-                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem]  -translate-x-[3.25rem] z-[1] transition-all duration-300  shinebtn shinebtn-hover  text-[#F7E08C] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
-                            clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
-                        }}>
-                            <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>REACT</span>
-                            <span className={` transition-all ease-in-out opacity-0 group-hover:opacity-100 duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
-
-                        </div>
-                    </div>
 
                     <div className=' flex items-center    '>
 
@@ -118,16 +103,16 @@ function PowerCard() {
                             </div>
                         </div>
 
-                        <div className=' bg-[#3D3D3D] group h-[3.875rem] hover:h-[7.3625rem] -translate-x-[3.25rem] z-[1] transition-all duration-300  text-[#D0AEFD] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem] relative' style={{
+                        <div className='shinebtn shinebtn-hover bg-[#3D3D3D] group h-[3.875rem] hover:h-[7.3625rem] ml-[-3.25rem] z-[1] transition-all duration-300  text-[#D0AEFD] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem] relative' style={{
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>REDUX</span>
-                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}> Centralise my states using Redux</span>
 
                         </div>
 
                     </div>
-                    <div className='flex items-center'>
+                    <div className='flex items-center justify-center'>
                         <div className='relative z-[2] '>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 120" fill="none" className='w-[6.5rem] h-[9.375rem] shrink-0 '>
                                 <path d="M2 31.1551L52 2.30897L102 31.1551V88.8449L52 117.691L2 88.8449V31.1551Z" fill="#302E2E" stroke="#F7E08C" strokeWidth="4" />
@@ -137,11 +122,30 @@ function PowerCard() {
                             </div>
                         </div>
 
-                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -translate-x-[3.25rem] z-[1] transition-all duration-300  text-[#F7E08C] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
+                        <div className='shinebtn shinebtn-hover bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -ml-[3.25rem] z-[1] transition-all duration-300  text-[#F7E08C] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>REACT NATIVE</span>
                             <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+
+                        </div>
+                    </div>
+
+                    <div className='flex items-center justify-end'>
+                        <div className='relative z-[2] '>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 120" fill="none" className='w-[6.5rem] h-[9.375rem] shrink-0 '>
+                                <path d="M2 31.1551L52 2.30897L102 31.1551V88.8449L52 117.691L2 88.8449V31.1551Z" fill="#302E2E" stroke="#8FCE83" strokeWidth="4" />
+                            </svg>
+                            <div className='absolute h-[50%] w-[100%] inset-0 top-[25%]'>
+                                <Image alt='react' src='/nodejs.png' className=' object-scale-down top-0 mix-blend-lighten' layout='fill' />
+                            </div>
+                        </div>
+
+                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem]  -ml-[3.25rem] z-[1] transition-all duration-300  shinebtn shinebtn-hover  text-[#8FCE83] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
+                            clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
+                        }}>
+                            <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>NODE JS</span>
+                            <span className={` transition-all ease-in-out opacity-0 group-hover:opacity-100 duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
 
                         </div>
                     </div>
@@ -158,7 +162,7 @@ function PowerCard() {
                             </div>
                         </div>
 
-                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -translate-x-[3.25rem] z-[1] transition-all duration-300  text-[#34BDB2] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
+                        <div className='shinebtn shinebtn-hover bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -ml-[3.25rem] z-[1] transition-all duration-300  text-[#34BDB2] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>SEMANTIC UI</span>
@@ -168,7 +172,7 @@ function PowerCard() {
                     </div>
 
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center justify-center'>
                         <div className='relative z-[2] '>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 120" fill="none" className='w-[6.5rem] h-[9.375rem] shrink-0 '>
                                 <path d="M2 31.1551L52 2.30897L102 31.1551V88.8449L52 117.691L2 88.8449V31.1551Z" fill="#302E2E" stroke="#30B0FF" strokeWidth="4" />
@@ -179,7 +183,7 @@ function PowerCard() {
                             </div>
                         </div>
 
-                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -translate-x-[3.25rem] z-[1] transition-all duration-300  text-[#30B0FF] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
+                        <div className='shinebtn shinebtn-hover bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -ml-[3.25rem] z-[1] transition-all duration-300  text-[#30B0FF] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>MATERIAL UI</span>
@@ -188,7 +192,7 @@ function PowerCard() {
                         </div>
                     </div>
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center justify-end'>
                         <div className='relative z-[2] '>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 120" fill="none" className='w-[6.5rem] h-[9.375rem] shrink-0 '>
                                 <path d="M2 31.1551L52 2.30897L102 31.1551V88.8449L52 117.691L2 88.8449V31.1551Z" fill="#302E2E" stroke="#C08FFF" strokeWidth="4" />
@@ -199,7 +203,7 @@ function PowerCard() {
                             </div>
                         </div>
 
-                        <div className='bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -translate-x-[3.25rem] z-[1] transition-all duration-300  text-[#C08FFF] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
+                        <div className='shinebtn shinebtn-hover bg-[#3D3D3D] group relative h-[3.875rem] hover:h-[7.3625rem] -ml-[3.25rem] z-[1] transition-all duration-300  text-[#C08FFF] font-normal text-[1.5rem]  w-[22.4375rem] pt-1 flex items-center pl-[3.75rem]' style={{
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>BOOTSTRAP</span>
@@ -209,6 +213,7 @@ function PowerCard() {
                     </div>
                 </div>
 
+                {/*border seperater */}
 
                 <div className=' h-1 mt-[6rem] w-full' style={{ background: 'linear-gradient(to right, #F6F6F6, #313131, #F6F6F6)' }} />
             </div>

@@ -10,6 +10,14 @@ import { Physics } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import Badge from "@/components/IdBadge";
 import { useState, useEffect } from "react";
+import AboutText from "@/components/aboutText";
+import { Anybody } from "next/font/google";
+
+const anybody = Anybody({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"], // Multiple weights
+});
+
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/assets/3d/card.glb");
@@ -27,8 +35,8 @@ export default function About() {
 
   
   return (
-    <div className="relative h-screen w-full">
-      <div className="flex s h-screen w-full ">
+    <main className={`${anybody.className} relative h-screen w-full `}>
+      <div className=" h-screen w-full ">
       <Canvas
           camera={{ position: [0, 0, 10], fov: 25 }}
           style={{ backgroundColor: "transparent" }}
@@ -74,7 +82,9 @@ export default function About() {
             />
           </Environment>
         </Canvas>
+        
       </div>
-    </div>
+      <AboutText />
+    </main>
   );
 }

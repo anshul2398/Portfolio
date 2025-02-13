@@ -1,5 +1,5 @@
 import React from 'react'
-import { Anybody } from 'next/font/google'
+import Image from 'next/image'
 
 
 
@@ -7,9 +7,8 @@ function Header() {
     
   return (
 
-
-    <div className={`  absolute top-0 w-full z-[1] font-extrabold`}>
-        <p className='text-white text-[4rem] mt-[3rem] ml-[3.375rem]'>ANSHUL</p>
+    <div className={`  absolute  z-[1] w-[16.56rem] h-[7.31rem]`}>
+        <Image className=' text-[4rem] top-0  mt-[2rem] ml-[3.375rem]' alt='Anshul Web Developer' layout='fill'  src='/ANSHUL.png'  />
 
 
     </div>

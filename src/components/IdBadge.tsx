@@ -52,7 +52,7 @@ export default function Badge({ maxSpeed = 50, minSpeed = 10 ,windowWidth}) {
   const [dragged, drag] = useState<THREE.Vector3 | false>(false);
   const [hovered, hover] = useState(false);
 
-  const { nodes, materials } = useGLTF("/assets/3d/card.glb");
+  const { nodes, materials } = useGLTF("/assets/3d/anshulCard.glb");
   const texture = useTexture("/tag_texture.png");
 
   const [curve] = useState(
@@ -231,6 +231,8 @@ export default function Badge({ maxSpeed = 50, minSpeed = 10 ,windowWidth}) {
           lineWidth={1}
         />
       </mesh>
+
+    
     </>
   );
 

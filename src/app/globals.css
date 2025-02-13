@@ -115,5 +115,5 @@ filter: blur(30px);
     var(--shine-color),
     transparent
   );
-  --shine-transition: all 0.3s ease-in-out;
+  --shine-transition: all 0.63s ease-in-out;
 }
