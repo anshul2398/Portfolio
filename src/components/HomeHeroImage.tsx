@@ -17,7 +17,7 @@ const IBM_plex_mono = IBM_Plex_Mono({
 function HomeHeroImage() {
     return (
         <div className="relative aspect-[1920/787] ">
-            <Image src='/WebDeveloper.jpg' alt='Anshul Web Developer' layout="fill"  />
+            <Image src='/WebDeveloper.png' alt='Anshul Web Developer' layout="fill"  />
             <div className={` absolute bottom-[5rem] ml-[3.375rem] z-1`} >
                 <span className={`${anybody.className} text-white italic  text-[2.25rem] w-[24.375rem] font-bold `}>I am a web designer</span>
                 <p className={`${IBM_plex_mono.className} text-white text-[1.25rem] leading-[1.625rem] w-[24.3125rem] font-medium`}>I have been building webs on<br />internet for past 4 years, that has caught lot’s of <span className='line-through'>preys</span> customers</p>
