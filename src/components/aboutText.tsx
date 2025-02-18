@@ -11,6 +11,8 @@ const IBM_plex_mono = IBM_Plex_Mono({
 function aboutText() {
     return (
         <div>
+               {/* About me section */}
+
             <div className='absolute  top-[23.5%]  right-[15%]'>
 
                 <div className='relative w-[42.5rem] h-full  '>
@@ -18,12 +20,12 @@ function aboutText() {
                     <img src='/aboutborderbottom.png' className='absolute bottom-0 right-0' />
 
                     {/* About me text paragraph */}
-                    <div className='px-10 pt-12 pb-10'>
+                    <div className='px-12 pt-12 pb-10'>
                         <h2 className='font-bold text-[1.5rem] text-[#303030]'>Built Different</h2>
-                        <p className={` ${IBM_plex_mono.className} mt-8 font-medium text-[1.5rem] text-[#303030] ;eading-[1.875rem]`}>Powered by caffeine, code, and the burning spirit of anime protagonists I'm Anshul, a web developer with 4 years of experience.ready to level up your online presence. (May occasionally use otaku catchphrases while debugging. It's part of the charm.)</p>
+                        <p className={` ${IBM_plex_mono.className} mt-8 font-medium text-[1.5rem] text-[#303030] ;eading-[1.875rem]`}>Powered by caffeine, code, and the burning spirit of anime protagonists I'm Anshul, a web developer with 4 years of experience. Ready to level up your online presence. (May occasionally use otaku catchphrases while debugging. It's part of the charm.)</p>
                     </div>
                 </div>
-
+   {/* About me Bullet points */}
                 <div className={` ${IBM_plex_mono.className} font-medium text-[#303030] text-[1.25rem] mt-[4rem] pl-10 flex items-center space-x-10`} >
                     <div className=' flex items-start flex-col space-y-10 '>
                         <p>Bounty on my head:</p>
@@ -44,6 +46,7 @@ function aboutText() {
 
             </div>
 
+               {/* About me details section */}
 
             <div className={` mt-40 mx-[21rem] text-[1.25rem] font-medium text-[#303030] space-y-8 ${IBM_plex_mono.className}`}>
 
@@ -75,7 +78,8 @@ function aboutText() {
                     </ul>
 
                     <p className='text-[#AAAAAA] text-[1rem]'>{"</UL>"}</p>
-
+                    <p className='text-[#AAAAAA] text-[1.25rem]'>{'<a href="'}<a href='https://www.brevistay.com/' target='_blank' className='underline underline-offset-2 text-[#303030]'>www.brevistay.com</a>{'">'}<span className='text-[#303030]'>click this link to visit Brevistay</span>{'</a>'}
+                    </p> 
 
                     <p className='text-[#AAAAAA] text-[1rem]'>{"<UL>"}</p>
 
@@ -115,7 +119,7 @@ function aboutText() {
             
             </div>
         </div>
-                      )
+                       )
                }
             
 

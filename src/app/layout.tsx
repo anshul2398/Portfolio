@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./Providers";
 import Head from "next/head";
+import Menu from "@/components/Menu";
 
 
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Providers>
           
         {children}
+        <Menu />
         </Providers>
       </body>
     </html>

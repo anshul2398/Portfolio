@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { Anybody, IBM_Plex_Mono } from 'next/font/google'
