@@ -126,7 +126,7 @@ function PowerCard() {
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>REACT NATIVE</span>
-                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I build cross‑platform apps with Native</span>
 
                         </div>
                     </div>
@@ -145,7 +145,7 @@ function PowerCard() {
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>NODE JS</span>
-                            <span className={` transition-all ease-in-out opacity-0 group-hover:opacity-100 duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+                            <span className={` transition-all ease-in-out opacity-0 group-hover:opacity-100 duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>Helps me create fast server side apps</span>
 
                         </div>
                     </div>
@@ -166,7 +166,7 @@ function PowerCard() {
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>SEMANTIC UI</span>
-                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this clean HTML library for intuitive theming</span>
 
                         </div>
                     </div>
@@ -207,7 +207,7 @@ function PowerCard() {
                             clipPath: 'polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%)'
                         }}>
                             <span className=' opacity-100 group-hover:opacity-0 transition-opacity duration-300 absolute '>BOOTSTRAP</span>
-                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to build react based minimalist interfaces</span>
+                            <span className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[1.25rem] font-medium leading-[1.5rem] ${IBM_plex_mono.className}`}>I use this library to design mobile first websites</span>
 
                         </div>
                     </div>
