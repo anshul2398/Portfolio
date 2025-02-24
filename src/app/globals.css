@@ -305,3 +305,44 @@ filter: blur(30px);
     transform: rotate();
   }
 }
+
+
+
+
+/* Email me Rotation  */
+
+.emailrotation {
+ 
+  transition: 4s;
+  transform-style: preserve-3d;
+  transform: perspective(62.5rem) rotateX(0deg);
+}
+
+
+.emailrotation:hover {
+  transform: perspective(62.5rem) rotateX(360deg);
+}
+
+.emailrotation:hover span {
+  color: #fff;
+  font-weight: 500;
+  background: rgba(3, 169, 244, 0.8);
+}
+.emailrotation:hover span svg path {
+fill:#fff;
+}
+
+
+
+.emailrotation span:nth-child(1) {
+  transform: rotateX(360deg) translateZ(2.875rem);
+}
+.emailrotation span:nth-child(2) {
+  transform: rotateX(270deg) translateZ(2.875rem);
+}
+.emailrotation span:nth-child(3) {
+  transform: rotateX(180deg) translateZ(2.875rem);
+}
+.emailrotation span:nth-child(4) {
+  transform: rotateX(90deg) translateZ(2.875rem);
+}

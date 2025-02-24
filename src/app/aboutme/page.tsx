@@ -35,8 +35,8 @@ export default function About() {
 
   
   return (
-    <main className={`${anybody.className} relative h-screen w-full `}>
-      <div className=" h-screen w-full ">
+    <main className={`${anybody.className} relative h-full w-full `}>
+      <div className=" h-screen w-full z-50 ">
       <Canvas
           camera={{ position: [0, 0, 10], fov: 25 }}
           style={{ backgroundColor: "transparent" }}

@@ -1,8 +1,9 @@
-import DarkModeButton from "@/components/DarkModeButton";
 import Header from "@/components/header";
-import HomeHeroImage from "@/components/HomeHeroImage";
+import HomeHeroImage from "@/components/home/HomeHeroImage";
 import Menu from "@/components/Menu";
-import PowerCard from "@/components/PowerCard";
+import PowerCard from "@/components/home/PowerCard";
+import HomeBottom from "@/components/home/homebottom";
+
 import { useTheme } from "next-themes";
 import { Anybody } from "next/font/google";
 import Image from "next/image";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <HomeHeroImage />
       <PowerCard />
+      <HomeBottom />
      
     </main>
 

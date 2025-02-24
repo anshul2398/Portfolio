@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "./Providers";
 import Head from "next/head";
 import Menu from "@/components/Menu";
+import Footer from "@/components/footer";
 
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           
         {children}
         <Menu />
+        <Footer/>
         </Providers>
       </body>
     </html>
