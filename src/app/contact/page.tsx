@@ -9,7 +9,7 @@ const anybody = Anybody({
 });
 function page() {
     return (
-        <div className={`${anybody.className} h-full`}>
+        <div className={`${anybody.className} w-full h-full`}>
 
             <Contact /> 
         </div>

@@ -73,7 +73,7 @@ function aboutText() {
                     </li>
                     <li className=''>Webview for both products
                     </li>
-                    <li className=''>A Bunch of Brevistay’s Game tournament w ebsites over the years
+                    <li className=''>A Bunch of Brevistay’s Game tournament websites over the years
                     </li>
                 </ul>
 
@@ -103,7 +103,7 @@ function aboutText() {
                     </li>
                     <li className=''>Collaborating with Marketing and SEO team to boost website’s performance and impressions
                     </li >
-                    <li className=''>Working closely with Designer to im p rove websit e ’s quality
+                    <li className=''>Working closely with Designer to im p rove website’s quality
                     </li>
 
                 </ul>

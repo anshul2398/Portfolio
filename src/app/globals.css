@@ -241,7 +241,7 @@ filter: blur(30px);
   --shine-bg-multiplier: 50%;
   bottom: calc(var(--coin-y-multiplier) * 1rem - 3.5rem);
   height:4rem;
-  margin-bottom: 4rem;
+  margin-bottom:  calc(var(--coin-y-multiplier) * -1rem + 3rem);
   position: absolute;
   right: calc(var(--coin-x-multiplier) * 34% + 12%);
   transform: translateX(50%) scale(calc(0.4 + var(--coin-scale-multiplier))) rotate(calc(var(--coin-rotation-multiplier) * -1deg));
@@ -345,4 +345,110 @@ fill:#fff;
 }
 .emailrotation span:nth-child(4) {
   transform: rotateX(90deg) translateZ(2.875rem);
+}
+
+
+
+
+
+select {
+  appearance: none; /* Removes default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('/arrow.svg') no-repeat right 16px center; /* Adjust position */
+  /* Adds space for the arrow */
+}
+
+
+
+/* dropdown css  */
+
+.dropdown_menu li {
+  width:100%;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  opacity: 0;
+}
+.dropdown_menu li:hover {
+ background: #DEF2FA;
+}
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: 100.4%;
+  z-index: -1;
+}
+.dropdown {
+ 
+  z-index: 100;
+}
+.dropdown_menu--animated li {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown_menu-4 .dropdown_item-1 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 60ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-2 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 120ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-3 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 180ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-4 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 240ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-5 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 360ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-6 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 420ms ease-in-out forwards;
+}
+.dropdown_menu-4 .dropdown_item-7 {
+  transform-origin: top center;
+  animation: scaleZ 300ms 480ms ease-in-out forwards;
+}
+
+
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+.img-wrapper{
+  animation: float 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+  position: absolute;
+  top: 0; right: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+@keyframes float{
+  0%{
+    transform: translateZ(20px);
+  }
+  100%{
+    transform: translateY(-21px) translateX(-13px) translateZ(30px);
+  }
 }

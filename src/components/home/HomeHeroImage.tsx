@@ -140,10 +140,10 @@ function HomeHeroImage() {
 
 
 
-                    <button className={`tip-button mt-5 ${IBM_plex_mono.className}`} onClick={()=>{
+                    <button className={`tip-button mt-5 ${IBM_plex_mono.className}`} onClick={() => {
                         setTimeout(() => {
                             setpopup(true)
-                            
+
                         }, 1300);
                     }}>
                         <span className="tip-button__text text-[1.25rem]">Hire Me</span>
@@ -220,25 +220,29 @@ function HomeHeroImage() {
                 }}>
                 </div>
             </div>
-            {popup ?
+            {!popup ?
                 <div className='fixed w-full h-full  top-0 left-0 z-[50]  '  >
-                    <div className='absolute w-full h-full bg-black/50' onClick={()=>   setpopup(false)}/>
+                    <div className='absolute w-full h-full bg-black/50' onClick={() => setpopup(false)} />
 
                     <div className='flex items-center justify-center mt-28 '>
 
                         {/*Power Card ReactJs*/}
-                        <div className='relative w-[25.6875rem] h-[35.9375rem] perspective-[1000px] group '>
-                            <div className='  rounded-[1.25rem] shadow-2xl transition-transform duration-600 inset-0  relative w-full h-full  group-hover:-rotate-y-90 group-hover:-translate-z-[12.525rem] group-hover:-translate-x-[3rem] -translate-z-[10rem]' style={{
+                        <div className='relative w-[25.6875rem] h-[35.9375rem] perspective-[62.5rem] group '>
+                            <div className='  rounded-[1.25rem]  transition-transform duration-600 inset-0  relative w-full h-full  group-hover:-rotate-y-90 group-hover:-translate-z-[12.525rem] group-hover:-translate-x-[3rem] -translate-z-[8rem]' style={{
                                 transformStyle: 'preserve-3d'
                             }}>
 
 
 
-                                <Image src='/assets/powercard/ReactFront.jpg' alt='' layout='fill' className='text-black group-hover:opacity-0 rotate-y-0 translate-z-[160px] rounded-[1.25rem] bg-black transition-all duration-600
-                    '/>
-                                <Image src='/assets/powercard/ReactBack.jpg' alt='' layout='fill' className=' text-black  group-hover:opacity-100 rotate-y-90 -translate-z-[3rem] translate-x-[12.525rem] rounded-[1.25rem] bg-black  
-                    '/>
+                                <Image src='/HirePopupOne.png' alt='' layout='fill' className=' group-hover:opacity-0 opacity-100 rotate-y-0 translate-z-[8rem] rounded-[1.25rem]  transition-all duration-600'/>
 
+                                <Image src='/HirePopupTwo.png' alt='' layout='fill' className='   group-hover:opacity-100 opacity-0 rotate-y-90 -translate-z-[2rem] translate-x-[12.525rem] rounded-[1.25rem]    transition-all duration-600'/>
+
+                            </div>
+
+
+                            <div className='absolute w-[11.5625rem] h-[22.625rem] rotate-[7.48deg] top-0 right-0 transition-all duration-600  group-hover:-translate-x-[95%]  group-hover:translate-y-[55%] group-hover:rotate-z-[70deg] '>
+                                <Image src='/sword.png' alt='' layout='fill' className='img-wrapper ' />
                             </div>
                         </div>
                     </div>
