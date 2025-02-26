@@ -130,50 +130,55 @@ function HomeHeroImage() {
         });
     }, []);
 
-    useEffect(()=>{
-        var canvas = document.querySelector('canvas'),
-        ctx = canvas.getContext('2d');
+    useEffect(() => {
+        if (!popup) return; // Wait until the popup is open
 
-    // Setting the width and height of the canvas
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    console.log(canvas.width)
+        const canvas = document.querySelector("canvas");
+        if (!canvas) return; // Exit if canvas is still not found
 
-    // Setting up the letters
-    let letters:any = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
-    letters = letters.split('');
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
 
-    // Setting up the columns
-    var fontSize = 10,
-        columns = canvas.width / fontSize;
+        // Setting the width and height of the canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        console.log(canvas.width)
 
-    // Setting up the drops
-    var drops = [];
-    for (var i = 0; i < columns; i++) {
-        drops[i] = 1;
-    }
+        // Setting up the letters
+        let letters: any = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+        letters = letters.split('');
 
-    // Setting up the draw function
-    function draw() {
-        ctx.fillStyle = 'rgba(48, 48, 48, .1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < drops.length; i++) {
-            var text = letters[Math.floor(Math.random() * letters.length)];
-            ctx.fillStyle = '#5c5c5c';
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-            drops[i]++;
-            if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
-                drops[i] = 0;
+        // Setting up the columns
+        var fontSize = 10,
+            columns = canvas.width / fontSize;
+
+        // Setting up the drops
+        var drops = [];
+        for (var i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        // Setting up the draw function
+        function draw() {
+            ctx.fillStyle = 'rgba(48, 48, 48, .1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < drops.length; i++) {
+                var text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillStyle = '#5c5c5c';
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                drops[i]++;
+                if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+                    drops[i] = 0;
+                }
             }
         }
-    }
 
-    // Loop the animation
-    setInterval(draw, 33);
-    },[])
+        // Loop the animation
+        setInterval(draw, 33);
+    }, [popup]);
 
 
-  
+
 
     return (
         <div>
