@@ -220,34 +220,36 @@ function HomeHeroImage() {
                 }}>
                 </div>
             </div>
-            {!popup ?
-                <div className='fixed w-full h-full  top-0 left-0 z-[50]  '  >
-                    <div className='absolute w-full h-full bg-black/50' onClick={() => setpopup(false)} />
+            {popup ?
+                // <div className='fixed w-full h-full  top-0 left-0 z-[50]  '  >
+                //     <div className='absolute w-full h-full bg-black/50' onClick={() => setpopup(false)} />
 
-                    <div className='flex items-center justify-center mt-28 '>
+                //     <div className='flex items-center justify-center mt-28 '>
 
-                        {/*Power Card ReactJs*/}
-                        <div className='relative w-[25.6875rem] h-[35.9375rem] perspective-[62.5rem] group '>
-                            <div className='  rounded-[1.25rem]  transition-transform duration-600 inset-0  relative w-full h-full  group-hover:-rotate-y-90 group-hover:-translate-z-[12.525rem] group-hover:-translate-x-[3rem] -translate-z-[8rem]' style={{
-                                transformStyle: 'preserve-3d'
-                            }}>
-
-
-
-                                <Image src='/HirePopupOne.png' alt='' layout='fill' className=' group-hover:opacity-0 opacity-100 rotate-y-0 translate-z-[8rem] rounded-[1.25rem]  transition-all duration-600'/>
-
-                                <Image src='/HirePopupTwo.png' alt='' layout='fill' className='   group-hover:opacity-100 opacity-0 rotate-y-90 -translate-z-[2rem] translate-x-[12.525rem] rounded-[1.25rem]    transition-all duration-600'/>
-
-                            </div>
+                //         {/*Power Card ReactJs*/}
+                //         <div className='relative w-[25.6875rem] h-[35.9375rem] perspective-[62.5rem] group '>
+                //             <div className='  rounded-[1.25rem]  transition-transform duration-600 inset-0  relative w-full h-full  group-hover:-rotate-y-90 group-hover:-translate-z-[12.525rem] group-hover:-translate-x-[3rem] -translate-z-[8rem]' style={{
+                //                 transformStyle: 'preserve-3d'
+                //             }}>
 
 
-                            <div className='absolute w-[11.5625rem] h-[22.625rem] rotate-[7.48deg] top-0 right-0 transition-all duration-600  group-hover:-translate-x-[95%]  group-hover:translate-y-[55%] group-hover:rotate-z-[70deg] '>
-                                <Image src='/sword.png' alt='' layout='fill' className='img-wrapper ' />
-                            </div>
-                        </div>
+
+                //                 <Image src='/HirePopupOne.png' alt='' layout='fill' className=' group-hover:opacity-0 opacity-100 rotate-y-0 translate-z-[8rem] rounded-[1.25rem]  transition-all duration-600'/>
+
+                //                 <Image src='/HirePopupTwo.png' alt='' layout='fill' className='   group-hover:opacity-100 opacity-0 rotate-y-90 -translate-z-[2rem] translate-x-[12.525rem] rounded-[1.25rem]    transition-all duration-600'/>
+
+                //             </div>
+
+
+                //             <div className='absolute w-[11.5625rem] h-[22.625rem] rotate-[7.48deg] top-0 right-0 transition-all duration-600  group-hover:-translate-x-[95%]  group-hover:translate-y-[55%] group-hover:rotate-z-[70deg] '>
+                //                 <Image src='/sword.png' alt='' layout='fill' className='img-wrapper ' />
+                //             </div>
+                //         </div>
+                //     </div>
+
+                // </div>
+                <div>
                     </div>
-
-                </div>
                 : null}
         </div>
 

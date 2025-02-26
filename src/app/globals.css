@@ -377,7 +377,8 @@ select {
   top: 100%;
   left: -1px;
   width: 100.4%;
-  z-index: -1;
+  
+  
 }
 .dropdown {
  

@@ -1,4 +1,4 @@
-import Contact from '@/components/contact'
+import Contact from '@/components/contact/contact'
 import React from 'react'
 import { Anybody } from "next/font/google";
 import Image from "next/image";

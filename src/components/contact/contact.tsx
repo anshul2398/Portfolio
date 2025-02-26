@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import { IBM_Plex_Mono } from "next/font/google";
 import ContactMePopup from './ContactMePopup';
+import Signal from './Signal';
 
 const IBM_plex_mono = IBM_Plex_Mono({
     subsets: ["latin"],
@@ -15,6 +16,7 @@ const IBM_plex_mono = IBM_Plex_Mono({
 function Contact() {
 
     const [emailpopup, setemailpopup] = useState(false)
+    const [signalpopup, setsignalpopup] = useState(false)
 
 
     return (
@@ -30,7 +32,7 @@ function Contact() {
                     <div className='flex items-center justify-between mt-[7rem]'>
 
                         <div className='text-[2rem] font-medium text-[#303030] space-y-3'>
-                            <p className='flex items-center  '>
+                            <a className='flex items-center  ' href='https://www.linkedin.com/in/anshul-sharma23' target='_blank'>
                                 <span className='relative group'> LinkedIn
                                     <span className=' absolute w-0 group-hover:w-full transition-width  duration-500 left-0 h-1 bottom-0 bg-[#303030]' />
                                 </span>
@@ -38,21 +40,22 @@ function Contact() {
                                     <path d="M2 22L22 2" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M2 2H22V22" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                            </p>
-                            <p className='flex items-center  '>
+                            </a>
+                            <a className='flex items-center  ' href='https://www.instagram.com/anshul.sharma23/' target='_blank'>
                                 <span className='relative group'> Instagram
                                     <span className=' absolute w-0 group-hover:w-full transition-width  duration-500 left-0 h-1 bottom-0 bg-[#303030]' />
                                 </span> <svg xmlns="http://www.w3.org/2000/svg" className='w-6 h-6 ml-3' viewBox="0 0 24 24" fill="none">
                                     <path d="M2 22L22 2" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M2 2H22V22" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></p>
-                            <p className='flex items-center  ' >
+                                </svg></a>
+                            <p className='flex items-center cursor-pointer ' onClick={()=>setsignalpopup(true)} >
                                 <span className='relative group'> Signal
                                     <span className=' absolute w-0 group-hover:w-full transition-width  duration-500 left-0 h-1 bottom-0 bg-[#303030]' />
                                 </span> <svg xmlns="http://www.w3.org/2000/svg" className='w-6 h-6 ml-3' viewBox="0 0 24 24" fill="none">
                                     <path d="M2 22L22 2" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M2 2H22V22" stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></p>
+                                </svg>
+                                </p>
 
                         </div>
 
@@ -83,6 +86,12 @@ function Contact() {
             </div>
             {emailpopup ? 
             <ContactMePopup setemailpopup={setemailpopup} IBM_plex_mono={IBM_plex_mono}/>
+           
+            
+        :null}
+        {signalpopup ? 
+         <Signal setsignalpopup={setsignalpopup} IBM_plex_mono={IBM_plex_mono}/>
+           
             
         :null}
         </div>
