@@ -1,14 +1,20 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { IBM_Plex_Mono } from "next/font/google";
+import ContactMePopup from './contact/ContactMePopup';
 
 const IBM_plex_mono = IBM_Plex_Mono({
     subsets: ["latin"],
-    weight: ["500", "700"], // Multiple weights
+    weight: ["400","500", "700"], // Multiple weights
 
 });
 
+
 function aboutText() {
+
+    const [emailpopup, setemailpopup] = useState(false)
+
+
     return (
         <div>
             {/* About me section */}
@@ -103,7 +109,7 @@ function aboutText() {
                     </li>
                     <li className=''>Collaborating with Marketing and SEO team to boost website’s performance and impressions
                     </li >
-                    <li className=''>Working closely with Designer to im p rove website’s quality
+                    <li className=''>Working closely with Designer to improve website’s quality
                     </li>
 
                 </ul>
@@ -121,10 +127,9 @@ function aboutText() {
 
             <div className={` mt-28 mx-[21rem] p-10 space-x-10  text-[1.25rem] flex items-center justify-between font-bold text-[#303030]  border-[2px] border-[#303030] ${IBM_plex_mono.className}`}>
                 <p>Intrigued with my skills and experience? Let’s have a chat then</p>
-                <a href="#"
-                    className="group flex items-center  shrink-0 justify-between w-[11.6875rem] px-3 h-11 text-[#303030] no-underline border-[2px] rounded-[0.25rem] border-[#3030330]">
+                <div onClick={() => setemailpopup(true)} className="group  cursor-pointer flex items-center  shrink-0 justify-between w-[11.6875rem] px-3 h-11 text-[#303030] no-underline border-[2px] rounded-[0.25rem] border-[#3030330]">
                     <span className="relative overflow-hidden h-8">
-                        <div className="transition-transform duration-[400ms] group-hover:-translate-y-[1.875rem]">
+                        <div className="transition-transform duration-[400ms] group-hover:-translate-y-[1.875rem]" >
                             <span className="block text-[1.25rem] transition-transform duration-[400ms] origin-right font-medium">
                                 Email Me
                             </span>
@@ -144,13 +149,21 @@ function aboutText() {
 
 
                     </div>
-                </a >
+                </div >
             </div >
 
 
             <div className={` pb-40 border-t-[2px] border-[#303030] mx-[21rem] mt-14`}>
 
             </div>
+
+            {emailpopup ? 
+            <ContactMePopup setemailpopup={setemailpopup} IBM_plex_mono={IBM_plex_mono}/>
+           
+            
+        :null}
+
+
         </div >
     )
 }

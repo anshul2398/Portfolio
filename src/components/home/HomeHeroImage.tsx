@@ -10,7 +10,7 @@ const anybody = Anybody({
 });
 const IBM_plex_mono = IBM_Plex_Mono({
     subsets: ["latin"],
-    weight: ["400", "500","600"], // Multiple weights
+    weight: ["400", "500", "600"], // Multiple weights
 
 });
 
@@ -130,6 +130,51 @@ function HomeHeroImage() {
         });
     }, []);
 
+    useEffect(()=>{
+        var canvas = document.querySelector('canvas'),
+        ctx = canvas.getContext('2d');
+
+    // Setting the width and height of the canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    console.log(canvas.width)
+
+    // Setting up the letters
+    let letters:any = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+    letters = letters.split('');
+
+    // Setting up the columns
+    var fontSize = 10,
+        columns = canvas.width / fontSize;
+
+    // Setting up the drops
+    var drops = [];
+    for (var i = 0; i < columns; i++) {
+        drops[i] = 1;
+    }
+
+    // Setting up the draw function
+    function draw() {
+        ctx.fillStyle = 'rgba(48, 48, 48, .1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < drops.length; i++) {
+            var text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillStyle = '#5c5c5c';
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            drops[i]++;
+            if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+                drops[i] = 0;
+            }
+        }
+    }
+
+    // Loop the animation
+    setInterval(draw, 33);
+    },[])
+
+
+  
+
     return (
         <div>
             <div className="relative aspect-[1920/787] z-[10] ">
@@ -220,29 +265,35 @@ function HomeHeroImage() {
                 }}>
                 </div>
             </div>
-            {!popup ?
+            {popup ?
+
                 <div className='fixed w-full h-full  top-0 left-0 z-[50]  '>
                     <div className='absolute w-full h-full bg-black/50' onClick={() => setpopup(false)} />
-                    <div className='flex items-center justify-center  h-full'>
-                        <div className='relative w-[67.75rem] h-[41.25rem]   bg-[#303030] rounded-[1.25rem] flex  space-x-10'>
-                            <div className='relative shrink-0  w-[32.1875rem] h-full' >
+                    <div className='flex items-center justify-center  h-full '>
+
+                        <div className=' w-[67.75rem] h-[41.25rem]    rounded-[1.25rem] flex   bg-[#303030]  space-x-10 relative'>
+                            <canvas className='absolute w-full h-full z-1   mix-blend-lighten rounded-[1.25rem] 
+'>
+
+                            </canvas>
+                            <div className='relative shrink-0  w-[32.1875rem] h-full z-20' >
                                 <Image src='/hireme.jpg' alt='' layout='fill' className=' p-1.5 rounded-[1.25rem]' />
                             </div>
-                            <div className={`w-full pr-6  py-6 ${IBM_plex_mono.className}`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className='w-4 h-4 cursor-pointer float-right ' onClick={() => setpopup(false)}>
+                            <div className={`w-full z-20  py-6 ${IBM_plex_mono.className}`}>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className='mr-6 w-4 h-4 cursor-pointer float-right ' onClick={() => setpopup(false)}>
                                     <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#fffd" />
                                 </svg>
 
-                                <p className='text-[1rem] font-normal text-[#888888] mt-8'>AVAILABILITY STATUS</p>
-                                <p className='text-[1.25rem] font-medium text-[#F7E08C] flex items-center mt-2'>
-                                    <p className='w-1.5 h-1.5 bg-[#F7E08C] rounded-full mr-2' />AVAILABLE
+                                <p className='text-[1rem] font-normal text-[#888888] mt-8 pr-11'>AVAILABILITY STATUS</p>
+                                <p className='text-[1.25rem] font-medium text-[#F7E08C] flex items-center mt-2 pr-11'>
+                                    <span className='w-1.5 h-1.5 bg-[#F7E08C] rounded-full mr-2' />AVAILABLE
                                 </p>
-                                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 27 25" fill="none" className='w-7 h-6 mt-[12rem]' >
-  <path d="M5.6589 16.3205C7.11304 16.3205 8.3028 17.5085 8.3028 18.9605C8.3028 20.4125 7.11304 21.6005 5.6589 21.6005C4.20475 21.6005 3.015 20.4125 3.015 18.9605C3.015 17.5085 4.20475 16.3205 5.6589 16.3205ZM5.6589 13.6805C2.75061 13.6805 0.371094 16.0565 0.371094 18.9605C0.371094 21.8645 2.75061 24.2405 5.6589 24.2405C8.56719 24.2405 10.9467 21.8645 10.9467 18.9605C10.9467 16.0565 8.56719 13.6805 5.6589 13.6805ZM13.5906 3.12047C15.0448 3.12047 16.2345 4.30847 16.2345 5.76047C16.2345 7.21247 15.0448 8.40047 13.5906 8.40047C12.1365 8.40047 10.9467 7.21247 10.9467 5.76047C10.9467 4.30847 12.1365 3.12047 13.5906 3.12047ZM13.5906 0.480469C10.6823 0.480469 8.3028 2.85647 8.3028 5.76047C8.3028 8.66447 10.6823 11.0405 13.5906 11.0405C16.4989 11.0405 18.8784 8.66447 18.8784 5.76047C18.8784 2.85647 16.4989 0.480469 13.5906 0.480469ZM21.5223 16.3205C22.9765 16.3205 24.1662 17.5085 24.1662 18.9605C24.1662 20.4125 22.9765 21.6005 21.5223 21.6005C20.0682 21.6005 18.8784 20.4125 18.8784 18.9605C18.8784 17.5085 20.0682 16.3205 21.5223 16.3205ZM21.5223 13.6805C18.614 13.6805 16.2345 16.0565 16.2345 18.9605C16.2345 21.8645 18.614 24.2405 21.5223 24.2405C24.4306 24.2405 26.8101 21.8645 26.8101 18.9605C26.8101 16.0565 24.4306 13.6805 21.5223 13.6805Z" fill="#888888"/>
-</svg>
-                                <p className='text-[1.125rem] font-normal text-[#888888] mt-4'>If you are interested in working with me Full time or Freelance then drop me a message on any of my mentioned platforms and I will get back to you</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 25" fill="none" className='w-7 h-6 mt-[12rem] pr-11' >
+                                    <path d="M5.6589 16.3205C7.11304 16.3205 8.3028 17.5085 8.3028 18.9605C8.3028 20.4125 7.11304 21.6005 5.6589 21.6005C4.20475 21.6005 3.015 20.4125 3.015 18.9605C3.015 17.5085 4.20475 16.3205 5.6589 16.3205ZM5.6589 13.6805C2.75061 13.6805 0.371094 16.0565 0.371094 18.9605C0.371094 21.8645 2.75061 24.2405 5.6589 24.2405C8.56719 24.2405 10.9467 21.8645 10.9467 18.9605C10.9467 16.0565 8.56719 13.6805 5.6589 13.6805ZM13.5906 3.12047C15.0448 3.12047 16.2345 4.30847 16.2345 5.76047C16.2345 7.21247 15.0448 8.40047 13.5906 8.40047C12.1365 8.40047 10.9467 7.21247 10.9467 5.76047C10.9467 4.30847 12.1365 3.12047 13.5906 3.12047ZM13.5906 0.480469C10.6823 0.480469 8.3028 2.85647 8.3028 5.76047C8.3028 8.66447 10.6823 11.0405 13.5906 11.0405C16.4989 11.0405 18.8784 8.66447 18.8784 5.76047C18.8784 2.85647 16.4989 0.480469 13.5906 0.480469ZM21.5223 16.3205C22.9765 16.3205 24.1662 17.5085 24.1662 18.9605C24.1662 20.4125 22.9765 21.6005 21.5223 21.6005C20.0682 21.6005 18.8784 20.4125 18.8784 18.9605C18.8784 17.5085 20.0682 16.3205 21.5223 16.3205ZM21.5223 13.6805C18.614 13.6805 16.2345 16.0565 16.2345 18.9605C16.2345 21.8645 18.614 24.2405 21.5223 24.2405C24.4306 24.2405 26.8101 21.8645 26.8101 18.9605C26.8101 16.0565 24.4306 13.6805 21.5223 13.6805Z" fill="#888888" />
+                                </svg>
+                                <p className='text-[1.125rem] font-normal text-[#888888] mt-4 pr-11'>If you are interested in working with me Full time or Freelance then drop me a message on any of my mentioned platforms and I will get back to you</p>
 
-                                <a href='/contact' className='mt-10 flex items-center  justify-center h-13 border-[1px] border-[#616161] rounded-[0.625rem] text-[1.25rem] font-semibold text-[#fff]'>Contact</a>
+                                <a href='/contact' className='mt-10 flex items-center mr-11 justify-center h-13 border-[1px] border-[#616161] rounded-[0.625rem] text-[1.25rem] font-semibold text-[#fff]'>Contact</a>
                             </div>
                         </div>
                     </div>

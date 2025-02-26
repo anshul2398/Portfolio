@@ -80,9 +80,12 @@ function ContactMePopup({ setemailpopup, IBM_plex_mono }) {
                 .then(
                     () => {
                         console.log('SUCCESS!');
+                        setStatus("SUCCESS")
                     },
                     (error) => {
                         console.log('FAILED...', error);
+                        seterror("Some error occured")
+
                     },
                 );
 
@@ -113,76 +116,93 @@ function ContactMePopup({ setemailpopup, IBM_plex_mono }) {
 
             </div>
 
-            <div className='w-[51.3125rem] h-[35.75rem] bg-[#fff] font-medium text-[#303030] p-5 z-20' >
+            {status == "SUCCESS" ?
+                <div className='w-[51.3125rem] h-[35.75rem] bg-[#fff] font-medium text-[#303030] p-5 z-20' >
+                    <div className='flex items-center justify-end w-full '>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className='w-4 h-4 cursor-pointer' onClick={() => setemailpopup(false)}>
+                            <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#303030" />
+                        </svg>
 
-                <div className='flex items-center justify-between '>
-                    <p className='text-[1.375rem]' >Email</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className='w-4 h-4 cursor-pointer' onClick={() => setemailpopup(false)}>
-                        <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#303030" />
-                    </svg>
-
-                </div>
-
-                {error != '' ? <div className='text-[#C53D34] font-semibold text-[0.875rem]  flex items-center justify-center mt-2 -mb-6'>{error}</div> : null}
-
-                <div className='mt-8 w-full relative z-20' >
-                    <div className='grid grid-cols-2 gap-x-4'>
-                        <div className={`${open ? ' border-t-[1px] border-l-[1px] border-r-[1px]  ' : ' border-[1px] '} text-[1rem]  relative z-30 px-4  bg-[#fff] h-10 flex items-center justify-between cursor-pointer w-full select-none space-x-2 ${error != '' && who == '' ? ' border-[#C53D34] text-[#C53D34]' : ''} `} onClick={() => {
-                            setopen(!open)
-                            setopen1(false)
-                        }
-                        }>
-                            <p className={`${open ? 'text-[0.75rem] text-[#888888]' : ''} transition-all duration-250 truncate `}>{who != '' ? who : 'Who are you?'}
-                            </p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none" className='w-3 h-2'>
-                                <path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z" fill="#303030" />
-                            </svg>
-
-                            {open ?
-                                <ul className="dropdown_menu dropdown_menu-4 bg-[#fff]   text-[#303030]  border-b-[1px] border-l-[1px] border-r-[1px] z-30 ">
-                                    {whoyouare.map((item, i) => {
-                                        return (
-                                            <li className={` dropdown_item-${i + 1} select-none`} onClick={() => setwho(item)}>{item}</li>
-                                        )
-                                    })}
-
-                                </ul>
-                                : null}
-                        </div>
-
-                        <div className={`${open1 ? ' border-t-[1px] border-l-[1px] border-r-[1px]  ' : ' border-[1px] '} text-[1rem]  relative z-20 px-4  bg-[#fff] h-10 flex items-center justify-between cursor-pointer w-full select-none space-x-2  ${error != '' && want == '' ? ' border-[#C53D34] text-[#C53D34]' : ''} `} onClick={() => {
-                            setopen(false)
-                            setopen1(!open1)
-                        }}>
-                            <p className={`${open1 ? 'text-[0.75rem] text-[#888888]' : ''} transition-all duration-250 truncate  `}> {want != '' ? want : 'What you want?'}
-                            </p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none" className='w-3 h-2 shrink-0'>
-                                <path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z" fill="#303030" />
-                            </svg>
-
-                            {open1 ?
-                                <ul className="dropdown_menu dropdown_menu-4 bg-[#fff] pb-2 text-[#303030]  border-b-[1px] border-l-[1px] border-r-[1px]  z-20">
-                                    {whatyouwant.map((item, i) => {
-                                        return (
-                                            <li className={` dropdown_item-${i + 1} select-none`} onClick={() => setwant(item)}>{item}</li>
-                                        )
-                                    })}
-                                </ul>
-                                : null}
-                        </div>
                     </div>
-
-                    <input className={`border-[1px] w-full mt-5 h-10 px-4 outline-none ${error != '' && error.includes('email') ? ' border-[#C53D34] text-[#C53D34]' : ''} `} type="email" name="email" value={email} placeholder="Your Email" required onChange={(e) => setemail(e.target.value)} />
-                    <textarea required className={`mt-5 relative border-[1px] h-[13rem] w-full outline-none px-4 py-3  z-10 resize-none ${error != '' && desc == '' ? ' border-[#C53D34] placeholder:text-[#C53D34] ' : ''} `} placeholder='What is it that you want to say...' onChange={(e) => setdesc(e.target.value)} value={desc}>
-
-                    </textarea>
-
-                    <div className='mt-5 flex items-center justify-center w-full' >
-                        <button className='w-[32.5rem] bg-[#303030] text-[#fff] h-11  cursor-pointer flex items-center justify-center ' onClick={() => handleSubmit()}>
-                            {loading ? <div className='w-6 h-6 rounded-[50%]  border-[#fff] border-l-[2px]  animate-spin' /> : 'SEND'}
-                        </button>
+                    <div className='flex items-center justify-center flex-col h-full'>
+                        <img src='/mailsuccess.png' className='w-[8rem] h-[6.75rem]' />
+                        <p className=' text-[1.25rem] font-medium mt-8'>Email Sent</p>
+                        <p className='font-normal text-[#888888] mt-4'>I will get back to you soon...</p>
+                        <p className='rotate-90 mt-7 text-[2rem]'>{':)'}</p>
                     </div>
                 </div>
-                <p className='text-[#888888] text-[0.875rem] text-center mt-7'>I usually respond back in 24-48 hours</p>
-            </div>
+                :
+                <div className='w-[51.3125rem] h-[35.75rem] bg-[#fff] font-medium text-[#303030] p-5 z-20' >
+
+                    <div className='flex items-center justify-between '>
+                        <p className='text-[1.375rem]' >Email</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className='w-4 h-4 cursor-pointer' onClick={() => setemailpopup(false)}>
+                            <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#303030" />
+                        </svg>
+
+                    </div>
+
+                    {error != '' ? <div className='text-[#C53D34] font-semibold text-[0.875rem]  flex items-center justify-center mt-2 -mb-6'>{error}</div> : null}
+
+                    <div className='mt-8 w-full relative z-20' >
+                        <div className='grid grid-cols-2 gap-x-4'>
+                            <div className={`${open ? ' border-t-[1px] border-l-[1px] border-r-[1px]  ' : ' border-[1px] '} text-[1rem]  relative z-30 px-4  bg-[#fff] h-10 flex items-center justify-between cursor-pointer w-full select-none space-x-2 ${error != '' && who == '' ? ' border-[#C53D34] text-[#C53D34]' : ''} `} onClick={() => {
+                                setopen(!open)
+                                setopen1(false)
+                            }
+                            }>
+                                <p className={`${open ? 'text-[0.75rem] text-[#888888]' : ''} transition-all duration-250 truncate `}>{who != '' ? who : 'Who are you?'}
+                                </p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none" className='w-3 h-2'>
+                                    <path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z" fill="#303030" />
+                                </svg>
+
+                                {open ?
+                                    <ul className="dropdown_menu dropdown_menu-4 bg-[#fff]   text-[#303030]  border-b-[1px] border-l-[1px] border-r-[1px] z-30 ">
+                                        {whoyouare.map((item, i) => {
+                                            return (
+                                                <li className={` dropdown_item-${i + 1} select-none`} onClick={() => setwho(item)}>{item}</li>
+                                            )
+                                        })}
+
+                                    </ul>
+                                    : null}
+                            </div>
+
+                            <div className={`${open1 ? ' border-t-[1px] border-l-[1px] border-r-[1px]  ' : ' border-[1px] '} text-[1rem]  relative z-20 px-4  bg-[#fff] h-10 flex items-center justify-between cursor-pointer w-full select-none space-x-2  ${error != '' && want == '' ? ' border-[#C53D34] text-[#C53D34]' : ''} `} onClick={() => {
+                                setopen(false)
+                                setopen1(!open1)
+                            }}>
+                                <p className={`${open1 ? 'text-[0.75rem] text-[#888888]' : ''} transition-all duration-250 truncate  `}> {want != '' ? want : 'What you want?'}
+                                </p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none" className='w-3 h-2 shrink-0'>
+                                    <path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z" fill="#303030" />
+                                </svg>
+
+                                {open1 ?
+                                    <ul className="dropdown_menu dropdown_menu-4 bg-[#fff] pb-2 text-[#303030]  border-b-[1px] border-l-[1px] border-r-[1px]  z-20">
+                                        {whatyouwant.map((item, i) => {
+                                            return (
+                                                <li className={` dropdown_item-${i + 1} select-none`} onClick={() => setwant(item)}>{item}</li>
+                                            )
+                                        })}
+                                    </ul>
+                                    : null}
+                            </div>
+                        </div>
+
+                        <input className={`border-[1px] w-full mt-5 h-10 px-4 outline-none ${error != '' && error.includes('email') ? ' border-[#C53D34] text-[#C53D34]' : ''} `} type="email" name="email" value={email} placeholder="Your Email" required onChange={(e) => setemail(e.target.value)} />
+                        <textarea required className={`mt-5 relative border-[1px] h-[13rem] w-full outline-none px-4 py-3  z-10 resize-none ${error != '' && desc == '' ? ' border-[#C53D34] placeholder:text-[#C53D34] ' : ''} `} placeholder='What is it that you want to say...' onChange={(e) => setdesc(e.target.value)} value={desc}>
+
+                        </textarea>
+
+                        <div className='mt-5 flex items-center justify-center w-full' >
+                            <button className='w-[32.5rem] bg-[#303030] text-[#fff] h-11  cursor-pointer flex items-center justify-center ' onClick={() => handleSubmit()}>
+                                {loading ? <div className='w-6 h-6 rounded-[50%]  border-[#fff] border-l-[2px]  animate-spin' /> : 'SEND'}
+                            </button>
+                        </div>
+                    </div>
+                    <p className='text-[#888888] text-[0.875rem] text-center mt-7'>I usually respond back in 24-48 hours</p>
+                </div>
+            }
 
         </div>
     )
