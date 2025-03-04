@@ -5,24 +5,25 @@ function Menu() {
 
     const [open, setOpen] = useState(false)
     const popupRef = useRef(null);
-
+    const buttonRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (popupRef.current && !popupRef.current.contains(event.target)) {
-            setOpen(false);
-        }
+      if (
+        popupRef.current && 
+        !popupRef.current.contains(event.target) && 
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
       };
-    
-      useEffect(() => {
-        if (open) {
-          document.addEventListener("mousedown", handleClickOutside);
-        } else {
-          document.removeEventListener("mousedown", handleClickOutside);
-        }
-        return () => {
-          document.removeEventListener("mousedown", handleClickOutside);
-        };
-      }, [open]);
+    }, []);
 
     return (
         // Main div making whole element fix at one place
@@ -35,7 +36,7 @@ function Menu() {
 
 
                 {/* This div contains the main menu button at the center */}
-                <div style={{ background: 'linear-gradient(180deg, #535353 0%, #000 100%)' }} className={`  transition-all duration-1000  rounded-[1.5rem]   h-full w-full  fixed z-10 p-0.5`} onClick={() => setOpen(!open)}>
+                <div style={{ background: 'linear-gradient(180deg, #535353 0%, #000 100%)' }} className={`  transition-all duration-1000  rounded-[1.5rem]   h-full w-full  fixed z-10 p-0.5`} ref={buttonRef} onClick={() => setOpen((prev) => !prev)}>
                     <div style={{ background: 'linear-gradient(180deg, #393939 0%, #202020 100%)' }} className='w-full h-full rounded-[1.5rem]' >
                         <div className={`  ${open ? ' rotate-180  ' : ''}  transition-all duration-500 flex flex-col items-center justify-center space-y-3 h-full py-6 px-5 `}>
                             <div style={{ boxShadow: '0px 2px 4px 0px rgba(254, 254, 254, 0.63) inset, 0px 1px 4px 0px rgba(0, 0, 0, 0.25)' }} className={` ${open ? ' rotate-45 translate-y-[250%]' : ''} transition-all duration-500 w-full h-2 bg-[#e3e3e3] rounded-[3px]`} />
@@ -141,7 +142,6 @@ function Menu() {
                 </div>
 
                 {/* Contact Navigation div */}
-
                 <div className={`${open ? ' translate-x-[140%] -translate-y-[50%] ' : ' invisible  scale-50'} z-[5] transition-all duration-500 ease-out absolute w-[5rem] right-0  rounded-[1.5rem] h-[5rem]  cursor-pointer `} onClick={() => window.open('/contact', '_self')}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none">
                         <rect x="0.5" y="0.5" width="83" height="83" rx="19.5" fill="url(#paint0_linear_12865_30)" stroke="url(#paint1_linear_12865_30)" />
