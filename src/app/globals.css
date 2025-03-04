@@ -101,6 +101,35 @@ filter: blur(30px);
 
 }
 
+
+.shinebtn1 {
+  position: absolute;
+  overflow: hidden;
+}
+
+.shinebtn1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  
+  
+  transition: var(--shine-transition);
+}
+
+.shinebtn1-hover:hover {
+  box-shadow: var(--btn-shadow);
+}
+
+.shinebtn1-hover:hover::before {
+  left: 100%;
+filter: blur(30px);
+  background: var(--shine-effect);
+
+}
+
 :root {
   --btn-border: 1px solid rgba(255, 255, 255, 0.2);
   --btn-bg: transparent;
