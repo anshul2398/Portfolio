@@ -333,7 +333,7 @@ function HomeHeroImage() {
                 }}>
                 </div>
             </div>
-            {!popup ?
+            {popup ?
 
                 <div className='fixed w-full h-full  top-0 left-0 z-[50]  '>
                     <div className='absolute w-full h-full bg-black/50' onClick={() => setpopup(false)} />
