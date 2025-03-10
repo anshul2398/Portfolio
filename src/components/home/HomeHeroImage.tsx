@@ -18,47 +18,7 @@ const IBM_plex_mono = IBM_Plex_Mono({
 });
 
 
-const generateGlowButtons = () => {
-    document.querySelectorAll(".glow-button").forEach((button) => {
-        let gradientElem = button.querySelector(".gradient");
 
-        if (!gradientElem) {
-            gradientElem = document.createElement("div");
-            gradientElem.classList.add("gradient");
-            button.appendChild(gradientElem);
-        }
-
-        const handlePointerMove = (event) => {
-            if (!event || !event.clientX || !event.clientY) return; // Prevents error
-
-            const rect = button.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            gsap.to(button, {
-                "--pointer-x": `${x}px`,
-                "--pointer-y": `${y}px`,
-                duration: 0.6,
-            });
-
-            gsap.to(button, {
-                "--button-glow": chroma
-                    .mix(
-                        getComputedStyle(button).getPropertyValue("--button-glow-start").trim(),
-                        getComputedStyle(button).getPropertyValue("--button-glow-end").trim(),
-                        x / rect.width
-                    )
-                    .hex(),
-                duration: 0.2,
-            });
-        };
-
-        button.addEventListener("pointermove", handlePointerMove);
-
-        // Cleanup on unmount to avoid memory leaks
-        return () => button.removeEventListener("pointermove", handlePointerMove);
-    });
-};
 
 function HomeHeroImage() {
 
@@ -232,21 +192,66 @@ function HomeHeroImage() {
     }, [popup]);
 
 
-    useEffect(() => {
-        generateGlowButtons();
-        window.addEventListener("resize", generateGlowButtons);
+    const generateGlowButtons = () => {
+        document.querySelectorAll(".glow-button").forEach((button) => {
+            let gradientElem = button.querySelector(".gradient");
 
-        return () => {
-            window.removeEventListener("resize", generateGlowButtons);
-        };
-    }, []);
+            if (!gradientElem) {
+                gradientElem = document.createElement("div");
+                gradientElem.classList.add("gradient");
+                button.appendChild(gradientElem);
+            }
+
+            const handlePointerMove = (event) => {
+                if (!event || !event.clientX || !event.clientY) return; // Prevents error
+
+                const rect = button.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                gsap.to(button, {
+                    "--pointer-x": `${x}px`,
+                    "--pointer-y": `${y}px`,
+                    duration: 0.6,
+                });
+
+                gsap.to(button, {
+                    "--button-glow": chroma
+                        .mix(
+                            getComputedStyle(button).getPropertyValue("--button-glow-start").trim(),
+                            getComputedStyle(button).getPropertyValue("--button-glow-end").trim(),
+                            x / rect.width
+                        )
+                        .hex(),
+                    duration: 0.2,
+                });
+            };
+
+            button.addEventListener("pointermove", handlePointerMove);
+
+            // Cleanup on unmount to avoid memory leaks
+            return () => button.removeEventListener("pointermove", handlePointerMove);
+        });
+    };
+
+    useEffect(() => {
+        if (popup) {
+
+            generateGlowButtons();
+            window.addEventListener("resize", generateGlowButtons);
+
+            return () => {
+                window.removeEventListener("resize", generateGlowButtons);
+            };
+        }
+    }, [popup]);
 
 
 
     return (
         <div>
-            <div className="relative aspect-[1920/787] z-[10] ">
-                <Image src='/WebDeveloper.png' alt='Anshul Web Developer' layout="fill" />
+            <div className="relative aspect-[3156/1200] z-[10] ">
+                <Image src='/webDeveloper.jpg' alt='Anshul Web Developer' layout="fill" />
                 <div className={` absolute bottom-[5rem] ml-[3.375rem] z-1`} >
                     <span className={`${anybody.className} text-white italic  text-[2.25rem] w-[24.375rem] font-bold `}>I am a web designer</span>
                     <p className={`${IBM_plex_mono.className} text-white text-[1.25rem] leading-[1.625rem] w-[24.3125rem] font-medium`}>I have been building webs on<br />internet for past 4 years, that has caught lot’s of <span className='line-through'>preys</span> customers</p>
