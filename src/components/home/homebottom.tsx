@@ -11,9 +11,10 @@ const IBM_plex_mono = IBM_Plex_Mono({
 function homebottom() {
     return (
         <div className='mt-[5rem]'>
+            <div className='relative w-[99rem] h-[40rem] mx-auto'>
 
-            <Image alt='' src='/anotherdevelopment.jpg' width={1584} height={640} className='mx-auto rounded-[2.5rem]' />
-
+            <Image alt='' src='/anotherdevelopment.jpg' layout='fill' className=' rounded-[2.5rem]' />
+            </div>
 
             <div className='mt-[10rem] flex items-center h-[28.25rem] w-[99rem] mx-auto rounded-[2.5rem]  bg-[#C53D34]'>
                 <div className='h-full w-[28.625rem] relative shrink-0'>
