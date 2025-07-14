@@ -27,7 +27,7 @@ function Menu() {
 
     return (
         // Main div making whole element fix at one place
-        <div className=' fixed bottom-[5%]  w-[5.875rem] left-1/2 -translate-x-[50%] h-[6rem] cursor-pointer  z-[10]'>
+        <div className=' fixed bottom-[5%]  w-[5.875rem] left-1/2 -translate-x-[50%] h-[6rem] cursor-pointer  z-[10] scale-80 l:scale-100'>
 
 
             {/* This div contains all the menu options and their relative position */}

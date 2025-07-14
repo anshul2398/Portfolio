@@ -17,7 +17,7 @@ export default function Home() {
 
 
   return (
-    <main className={`${anybody.className} pb-40 `}>
+    <main className={`${anybody.className} l:pb-40 `}>
       <Header />
       <HomeHeroImage />
       <PowerCard />

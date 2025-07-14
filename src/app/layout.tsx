@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
 
-    <html lang="en" suppressHydrationWarning className="s:text-[4px] m:text-[5px] l:text-[7px] xl:text-[9px] 2xl:text-[11px] 3xl:text-[12px] 4xl:text-[13px]   5xl:text-[13.5px] 6xl:text-[14px] 7xl:text-[14.5px] 8xl:text-[15px] 9xl:text-[15.5px] 10xl:text-[16px] 11xl:text-[17px] 12xl:text-[19px] ">
+    <html lang="en" suppressHydrationWarning className="s:text-[16px] m:text-[16px] l:text-[7px] xl:text-[9px] 2xl:text-[11px] 3xl:text-[12px] 4xl:text-[13px]   5xl:text-[13.5px] 6xl:text-[14px] 7xl:text-[14.5px] 8xl:text-[15px] 9xl:text-[15.5px] 10xl:text-[16px] 11xl:text-[17px] 12xl:text-[19px] ">
 
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

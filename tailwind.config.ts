@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
 
-
 export default {
   
   content: [
@@ -21,6 +20,9 @@ export default {
   },
 
 
-  plugins: [],
+  plugins: [
+ 
+
+  ],
   darkMode:'class'
 } satisfies Config;
