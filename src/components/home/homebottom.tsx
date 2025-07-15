@@ -16,7 +16,7 @@ function homebottom() {
                 <Image alt='' src='/anotherdevelopment.jpg' layout='fill' className=' rounded-[2.5rem] ' />
             </div>
 
-            <div className='l:mt-[10rem]  flex flex-col l:flex-row items-center l:h-[28.25rem] l:w-[99rem]   l:rounded-[2.5rem]  l:bg-[#C53D34] bg-[#3F4AE7]'>
+            <div className='l:mt-[10rem]  flex flex-col l:flex-row items-center l:h-[28.25rem] l:w-[99rem] l:mx-auto   l:rounded-[2.5rem]  l:bg-[#C53D34] bg-[#3F4AE7]'>
                 <div className='h-full w-[28.625rem] relative shrink-0 hidden l:block'>
                     <Image alt='' src='/mywork.jpg' layout='fill' className='  rounded-l-[2.5rem]' />
                 </div>

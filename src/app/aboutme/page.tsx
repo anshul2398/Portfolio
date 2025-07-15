@@ -28,7 +28,7 @@ export default function About() {
 
   useEffect(() => {
 
-    const handleResize = () => setSize({ width: window.innerWidth, height: window.innerHeight });
+    const handleResize = () => setSize({ width: window.innerWidth >=500 ? window.innerWidth : 100, height: window.innerHeight });
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

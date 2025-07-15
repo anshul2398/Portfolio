@@ -65,15 +65,15 @@ function PowerCard() {
             <div className='l:mx-[2rem] mx-4'>
 
                 {/*Power Card Main Power*/}
-                <div className='flex items-center l:justify-between w-full mt-28 l:overflow-x-hidden no-scrollbar overflow-x-scroll flex-nowrap gap-x-4'>
+                <div className='flex items-center py-4 l:justify-between w-full mt-20 l:mt-28 l:overflow-x-hidden no-scrollbar overflow-x-scroll flex-nowrap gap-x-4'>
 
                     {/*Power Card ReactJs*/}
                     <div 
-                        className='relative w-[16.3125rem] h-[22.8216247559rem] perspective-[1000px] group shrink-0 cursor-pointer'
+                        className='relative w-[16.3125rem] l:w-[25.6875rem] h-[22.8216247559rem] l:h-[35.9375rem] perspective-[1000px] group shrink-0 cursor-pointer'
                         onClick={() => handleCardClick('react')}
                     >
                         <div 
-                            className={`rounded-[1.25rem] l:shadow-2xl transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.react ? 'rotate-y-180' : ''}`} 
+                            className={`rounded-[1.25rem]  transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.react ? 'rotate-y-180' : ''}`} 
                             style={{
                                 transformStyle: 'preserve-3d'
                             }}  
@@ -86,11 +86,11 @@ function PowerCard() {
 
                     {/*Power Card TailwindCss*/}
                     <div 
-                        className='relative w-[16.3125rem] h-[22.8216247559rem] perspective-[1000px] group shrink-0 cursor-pointer'
+                        className='relative w-[16.3125rem] l:w-[25.6875rem] h-[22.8216247559rem] l:h-[35.9375rem] perspective-[1000px] group shrink-0 cursor-pointer'
                         onClick={() => handleCardClick('tailwind')}
                     >
                         <div 
-                            className={`rounded-[1.25rem] l:shadow-2xl transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.tailwind ? 'rotate-y-180' : ''}`} 
+                            className={`rounded-[1.25rem]  transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.tailwind ? 'rotate-y-180' : ''}`} 
                             style={{
                                 transformStyle: 'preserve-3d'
                             }}
@@ -104,11 +104,11 @@ function PowerCard() {
 
                     {/*Power Card NextJs*/}
                     <div 
-                        className='relative w-[16.3125rem] h-[22.8216247559rem] perspective-[1000px] group shrink-0 cursor-pointer'
+                        className='relative w-[16.3125rem] l:w-[25.6875rem] h-[22.8216247559rem] l:h-[35.9375rem] perspective-[1000px] group shrink-0 cursor-pointer'
                         onClick={() => handleCardClick('nextjs')}
                     >
                         <div 
-                            className={`rounded-[1.25rem] lshadow-2xl transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.nextjs ? 'rotate-y-180' : ''}`} 
+                            className={`rounded-[1.25rem]  transition-transform duration-600 inset-0 relative w-full h-full group-hover:rotate-y-180 l:group-hover:rotate-y-180 ${flippedCards.nextjs ? 'rotate-y-180' : ''}`} 
                             style={{
                                 transformStyle: 'preserve-3d'
                             }}

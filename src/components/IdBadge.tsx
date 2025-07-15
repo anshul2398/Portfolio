@@ -101,7 +101,7 @@ export default function Badge({ maxSpeed = 50, minSpeed = 10 ,windowWidth}) {
      const minWidth = 600;
      const maxWidth = 2100;
      const progress = Math.min(1, Math.max(0, (windowWidth - minWidth) / (maxWidth - minWidth)));
-     const targetX = -3.5 * progress;
+     const targetX = -2.5 * progress;
 
      fixed.current.setNextKinematicTranslation({
       x: targetX,

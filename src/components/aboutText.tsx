@@ -19,9 +19,9 @@ function aboutText() {
         <div>
             {/* About me section */}
 
-            <div className='absolute  top-[5%]  right-[15%] -z-[1]'>
+            <div className='l:absolute  top-[5%]  right-[12rem] -z-[1]'>
 
-                <div className='relative w-[42.5rem] h-full  '>
+                <div className='relative l:w-[42.5rem] h-full  '>
                     <img src='/aboutborder.png' className='absolute top-0 left-0' /> {/* Border for element */}
                     <img src='/aboutborderbottom.png' className='absolute bottom-0 right-0' />
 
@@ -54,7 +54,7 @@ function aboutText() {
 
             {/* About me details section */}
 
-            <div className={` mt-40 mx-[21rem] text-[1.25rem] font-medium text-[#303030] space-y-8 ${IBM_plex_mono.className}`}>
+            <div className={` mt-40 l:mx-[21rem] text-[1.25rem] font-medium text-[#303030] space-y-8 ${IBM_plex_mono.className}`}>
 
                 <p className='text-[#AAAAAA] text-[1rem]'>{"<HTML>"}</p>
                 <p className='text-[#AAAAAA] text-[1rem]'>{"<BODY>"}</p>
@@ -125,9 +125,9 @@ function aboutText() {
             </div>
 
 
-            <div className={` mt-28 mx-[21rem] p-10 space-x-10  text-[1.25rem] flex items-center justify-between font-bold text-[#303030]  border-[2px] border-[#303030] ${IBM_plex_mono.className}`}>
+            <div className={` mt-28 l:mx-[21rem] l:p-10 l:space-x-10  text-[1.25rem] flex items-center justify-between font-bold text-[#303030]  border-[2px] border-[#303030] ${IBM_plex_mono.className}`}>
                 <p>Intrigued with my skills and experience? Let’s have a chat then</p>
-                <div onClick={() => setemailpopup(true)} className="group  cursor-pointer flex items-center  shrink-0 justify-between w-[11.6875rem] px-3 h-11 text-[#303030] no-underline border-[2px] rounded-[0.25rem] border-[#3030330]">
+                <div onClick={() => setemailpopup(true)} className="group  cursor-pointer flex items-center  shrink-0 justify-between l:w-[11.6875rem] px-3 h-11 text-[#303030] no-underline border-[2px] rounded-[0.25rem] border-[#3030330]">
                     <span className="relative overflow-hidden h-8">
                         <div className="transition-transform duration-[400ms] group-hover:-translate-y-[1.875rem]" >
                             <span className="block text-[1.25rem] transition-transform duration-[400ms] origin-right font-medium">

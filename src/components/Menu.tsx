@@ -27,7 +27,7 @@ function Menu() {
 
     return (
         // Main div making whole element fix at one place
-        <div className=' fixed bottom-[5%]  w-[5.875rem] left-1/2 -translate-x-[50%] h-[6rem] cursor-pointer  z-[10] scale-80 l:scale-100'>
+        <div className=' fixed bottom-[5%]  w-[5.875rem] left-1/2 -translate-x-[50%] h-[6rem] cursor-pointer  z-[10] scale-70 l:scale-100'>
 
 
             {/* This div contains all the menu options and their relative position */}
@@ -51,7 +51,7 @@ function Menu() {
                 {/* These are the menu options */}
                 {/* About Navigation div */}
                 <div ref={popupRef} >
-                    <div className={`${open ? ' -translate-y-[150%]  ' : ' invisible   scale-50'} shinebtn1 shinebtn1-hover z-[5]    transition-all duration-500 ease-out absolute  w-[5rem] left-1/2 -translate-x-[54%] rounded-[1.5rem] h-[5rem]  cursor-pointer active:scale-90 `} onClick={() => window.open('/aboutme', '_self')}>
+                    <div className={`${open ? ' -translate-y-[150%]  ' : ' invisible   scale-50'} shinebtn1 shinebtn1-hover z-[5]    transition-all duration-500 ease-out absolute  w-[5rem] left-1/2 l:-translate-x-[52%] -translate-x-[48%] rounded-[1.5rem] h-[5rem]  cursor-pointer active:scale-90 `} onClick={() => window.open('/aboutme', '_self')}>
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 84 84" fill="none" >
                             <rect x="0.5" y="0.5" width="83" height="83" rx="19.5" fill="url(#paint0_linear_12865_21)" stroke="url(#paint1_linear_12865_21)" />
                             <g filter="url(#filter0_i_12865_21)">
